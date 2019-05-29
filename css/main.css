@@ -1,0 +1,340 @@
+/* --------------------------------------------------------------------------
+Base styles:
+----------------------------------------------------------------------------- */
+/* Fix to include padding and border in the total width for each element */
+* {
+  box-sizing: border-box;
+}
+
+/* Fix for responsive images */
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  text-align: center;
+  color: #44545E;
+  /*This line makes text appear smoother and crisper.*/
+  /*try commenting out this line and refreshing your browser to see the difference!*/
+  -webkit-font-smoothing: antialiased;
+}
+
+/* This code will make images scale with the page.
+     to see this in action, comment it out and see what the
+  	 page looks like in the browser as you make the window
+  	 narrower without this code. The images don't shrink anymore! */
+img {
+  max-width: 100%;
+}
+
+/* ----------------------------------------
+  Typography
+  ------------------------------------------- */
+p {
+  font-family: 'Lato', sans-serif;
+  text-transform: none;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 37px;
+  letter-spacing: 12px;
+}
+
+h2 {
+  margin-bottom: 45px;
+}
+
+h3 {
+  margin-bottom: 45px;
+}
+
+a {
+  text-decoration: none;
+  color: #7B98AA;
+  font-weight: 600;
+  transition: all .3s ease-in-out;
+}
+
+a:hover {
+  color: #44545E;
+}
+
+/* ----------------------------------------
+  Buttons
+  ------------------------------------------- */
+button,
+article a {
+  cursor: pointer;
+  outline: 0;
+  border: 2px solid #44545E;
+  color: #44545E;
+  padding: 8px 25px;
+  background-color: transparent;
+  border-radius: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  /* BONUS #2: Transition & hover effect on anchors / buttons */
+  /* This line will make any changes on hover animate */
+  transition: all .3s ease-in-out;
+}
+
+/* BONUS #2 (continued): Add a hover effect for buttons and anchors!*/
+button:hover,
+article a:hover {
+  background-color: #44545E;
+  color: white;
+  font-weight: 600;
+}
+
+/* ----------------------------------------
+  Layout
+  ------------------------------------------- */
+.article-grid,
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+section {
+  padding: 105px 30px;
+}
+
+/* ----------------------------------------
+  Header
+  ------------------------------------------- */
+header {
+  padding-top: 30px;
+  background-image: url('../images/home_header_bg.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  /*WHATTTT is vh? vh stands for "viewport height". */
+  /*This is like saying "The header should take up 90% of the height of the browser window"*/
+  height: 90vh;
+  /*But we don't want it to ever get less than 400px tall or our content will get cut off!*/
+  min-height: 400px;
+  /* WHATTTT in the world is this? */
+  /* This code allows us to perfectly center the text in the header vertically. */
+  /*The first line display: flex; sets up a Flexbox (similar in ways to display: grid;)*/
+  display: flex;
+  /*Now we're saying we want items to stack on top of each other (the default is all children of a Flexbox)*/
+  /*will appear next to each other*/
+  flex-direction: column;
+  /*Now we're saying "vertically center that text, man!"*/
+  justify-content: center;
+  /*Still confused? Try opening your inspector and checking and unchecking each line to see what
+  	it does!*/
+}
+
+nav {
+  background-color: white;
+  width: 100%;
+  padding: 18px 0;
+  /* BONUS #1: CREATING A STICKY NAV */
+  /* Make the nav "stick" or stay in place as the user scrolls*/
+  position: fixed;
+  /* Make sure the nav stays at the very top of the page. 0 is shorthand for 0px */
+  top: 0;
+  /* Make sure the nav is on top of the other content. Any number above 0 would work here! */
+  z-index: 100;
+}
+
+nav a {
+  font-weight: 600;
+  letter-spacing: 0.75px;
+  padding: 0 60px;
+  text-transform: uppercase;
+}
+
+h1 a,
+h1 a:hover,
+header h2 {
+  color: #fff;
+}
+
+/* ----------------------------------------
+  Articles
+  ------------------------------------------- */
+.article-grid {
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+article p {
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+article a {
+  margin-top: 30px;
+  /*This will make sure we can add padding and margin to the top and bottom of anchors*/
+  display: inline-block;
+}
+
+/* ----------------------------------------
+  About
+  ------------------------------------------- */
+.about {
+  background-color: #CFF2F6;
+}
+
+/*We want the paragraphs inside the about section not to stretch too wide*/
+/* Otherwise the lines of text get hard to read! */
+.about p {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----------------------------------------
+  Gallery
+  ------------------------------------------- */
+.gallery-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-grid img {
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  margin-bottom: 16px;
+}
+
+/*BONUS #3: Add a hover effect to the images in the gallery on hover*/
+.gallery-grid img:hover {
+  opacity: .6;
+}
+
+/* ----------------------------------------
+  Footer
+  ------------------------------------------- */
+footer {
+  background-color: #CDF3F6;
+  overflow: auto;
+  padding-top: 30px;
+}
+
+footer a {
+  font-size: 30px;
+  padding: 15px;
+  margin-bottom: 30px;
+  display: inline-block;
+  color: #44545E;
+}
+
+hr {
+  /*First remove the default ugly border the browser adds! Yuck*/
+  border: none;
+  /* Now add your own border to the top or bottom */
+  border-bottom: 2px solid #44545E;
+  margin: 34px 0 3px;
+}
+
+footer input {
+  padding: 11px 10px;
+  width: 300px;
+  margin-right: 30px;
+  border: 0;
+  text-align: center;
+  margin-bottom: 12px;
+  outline: 0;
+}
+
+/* WHATTTT is this crazy code? This is how we can style the default ("placeholder") text for form fields! */
+/* Try typing into the input at the bottom and notice that the placeholder text dissapears. This is the default!*/
+/* Here we're just styling that placeholder text*/
+/* Helpful article: https://css-tricks.com/almanac/selectors/p/placeholder/ */
+::-webkit-input-placeholder {
+  color: #7C878E;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-size: 12.299px;
+  font-weight: 600;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #7C878E;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-size: 12.299px;
+  font-weight: 600;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #7C878E;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-size: 12.299px;
+  font-weight: 600;
+}
+
+:-ms-input-placeholder {
+  color: #7C878E;
+  text-transform: upperca;
+  letter-spacing: 0.75px;
+  font-size: 12.299px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 800px) {
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hamburger {
+    display: block;
+    text-align: left;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+}
+
+button {
+  color: #00A7D3;
+  font-family: Helvetica;
+  text-align: center;
+  line-height: 1;
+  padding: 14px 40px;
+  background-color: transparent;
+  border: 2px solid black;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  animation: font-bulger 1s .5s 6;
+}
+
+/* .wiggly for jquery */
+@keyframes font-bulger {
+  0%, 100% {
+    font-size: 20px;
+  }
+
+  50% {
+    font-size: 25px;
+  }
+}
