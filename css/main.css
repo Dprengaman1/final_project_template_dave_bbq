@@ -18,6 +18,7 @@ body {
   letter-spacing: .02em;
   text-align: center;
   color: #44545E;
+  background-color: black;
   /*This line makes text appear smoother and crisper.*/
   /*try commenting out this line and refreshing your browser to see the difference!*/
   -webkit-font-smoothing: antialiased;
@@ -38,6 +39,7 @@ p {
   font-family: 'Lato', sans-serif;
   text-transform: none;
   line-height: 1.4;
+  color: white;
 }
 
 h1, h2, h3, h4 {
@@ -59,7 +61,7 @@ h3 {
 
 a {
   text-decoration: none;
-  color: #7B98AA;
+  color: white;
   font-weight: 600;
   transition: all .3s ease-in-out;
 }
@@ -116,7 +118,7 @@ section {
   ------------------------------------------- */
 header {
   padding-top: 30px;
-  background-image: url('../images/home_header_bg.jpg');
+  background-image: url('../img/ribs.2nd.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -139,7 +141,7 @@ header {
 }
 
 nav {
-  background-color: white;
+  background-color: grey;
   width: 100%;
   padding: 18px 0;
   /* BONUS #1: CREATING A STICKY NAV */
@@ -184,41 +186,6 @@ article a {
 }
 
 /* ----------------------------------------
-  About
-  ------------------------------------------- */
-.about {
-  background-color: #CFF2F6;
-}
-
-/*We want the paragraphs inside the about section not to stretch too wide*/
-/* Otherwise the lines of text get hard to read! */
-.about p {
-  max-width: 780px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ----------------------------------------
-  Gallery
-  ------------------------------------------- */
-.gallery-grid {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.gallery-grid img {
-  cursor: pointer;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  margin-bottom: 16px;
-}
-
-/*BONUS #3: Add a hover effect to the images in the gallery on hover*/
-.gallery-grid img:hover {
-  opacity: .6;
-}
-
-/* ----------------------------------------
   Footer
   ------------------------------------------- */
 footer {
@@ -253,44 +220,6 @@ footer input {
   outline: 0;
 }
 
-/* WHATTTT is this crazy code? This is how we can style the default ("placeholder") text for form fields! */
-/* Try typing into the input at the bottom and notice that the placeholder text dissapears. This is the default!*/
-/* Here we're just styling that placeholder text*/
-/* Helpful article: https://css-tricks.com/almanac/selectors/p/placeholder/ */
-::-webkit-input-placeholder {
-  color: #7C878E;
-  text-transform: uppercase;
-  letter-spacing: 0.75px;
-  font-size: 12.299px;
-  font-weight: 600;
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: #7C878E;
-  text-transform: uppercase;
-  letter-spacing: 0.75px;
-  font-size: 12.299px;
-  font-weight: 600;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #7C878E;
-  text-transform: uppercase;
-  letter-spacing: 0.75px;
-  font-size: 12.299px;
-  font-weight: 600;
-}
-
-:-ms-input-placeholder {
-  color: #7C878E;
-  text-transform: upperca;
-  letter-spacing: 0.75px;
-  font-size: 12.299px;
-  font-weight: 600;
-}
-
 @media screen and (max-width: 800px) {
   .article-grid {
     grid-template-columns: 1fr;
@@ -315,7 +244,7 @@ footer input {
 }
 
 button {
-  color: #00A7D3;
+  color: black;
   font-family: Helvetica;
   text-align: center;
   line-height: 1;
